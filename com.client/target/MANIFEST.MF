@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: Raven
+Start-Class: client.GameClient
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Version: 2.1.1.RELEASE
+Created-By: Apache Maven 3.6.0
+Build-Jdk: 1.8.0_191
+Main-Class: org.springframework.boot.loader.JarLauncher
+

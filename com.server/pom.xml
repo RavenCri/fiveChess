@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.game</groupId>
+    <artifactId>fivechesss</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>com.server</artifactId>
+  <description>游戏服务端</description>
+  <dependencies>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		    <version>2.1.1.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.13</version>
+		</dependency>
+  </dependencies>
+<build> 
+  <plugins> 
+    <plugin> 
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-maven-plugin</artifactId>  
+      <version>2.1.1.RELEASE</version>  
+      <!--没有  spring-boot-starter-parent 
+		就必须要加下面的配置 不然 运行打包好的jar包就会提示没有清单。
+		如果pom依赖了<parent>，那么 便不需要配置下面的。	
+	--> 
+	 
+      <executions> 
+        <execution> 
+          <goals> 
+            <goal>repackage</goal> 
+          </goals> 
+        </execution> 
+      </executions> 
+    </plugin> 
+    
+    
+
+ 
+
+  </plugins> 
+</build>
+</project>

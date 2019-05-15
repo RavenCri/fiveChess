@@ -1,0 +1,7 @@
+server\service\UserServer.class
+server\control\UserControl.class
+bean\User.class
+server\dao\UserMapper.class
+common\GameRoom.class
+common\ConnectTomsg.class
+server\Server.class

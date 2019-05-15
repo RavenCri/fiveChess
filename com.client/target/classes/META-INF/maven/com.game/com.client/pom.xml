@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.game</groupId>
+    <artifactId>fivechesss</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>com.client</artifactId>
+  <description>游戏客户端</description>
+	<dependencies>
+	
+	</dependencies>
+
+ <build>
+  <plugins>
+     <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                 <version>2.1.1.RELEASE</version>
+                 <!-- 没有 <parent>spring-boot-starter-parent 
+						就必须要加下面的配置 不然 运行打包好的jar包就会提示没有清单。
+						如果pom依赖了<parent>，那么 便不需要配置下面的。	 -->
+
+                  <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>       	
+ </plugin>
+  
+    <plugin>
+   		 <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+         <configuration>
+             <source>1.8</source>
+             <target>1.8</target>
+             <encoding>UTF-8</encoding>
+             	<!-- 参与编译jar包的位置 -->
+             <compilerArguments>
+                 <extdirs>${project.basedir}/lib</extdirs>
+                
+             </compilerArguments>
+         </configuration>
+         
+       
+    </plugin>
+
+ 
+	<!-- 	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>2.6</version>
+			<configuration>
+			<source>1.8</source>
+			<target>1.8</target>
+				<archive>
+					<manifest>	
+						<addClasspath>true</addClasspath>
+						<classpathPrefix>lib/</classpathPrefix>
+						<mainClass>client.GameClient</mainClass>
+					</manifest>
+				</archive>
+				
+			</configuration>
+		</plugin> -->
+		<!-- <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>2.10</version>
+			<executions>
+				<execution>
+					<id>copy-dependencies</id>
+					<phase>package</phase>
+					<goals>
+						<goal>copy-dependencies</goal>
+					</goals>
+					<configuration>
+						<outputDirectory>${project.build.directory}/lib</outputDirectory>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+ -->
+  </plugins>
+  
+  <resources>
+       <resource>
+          <directory>${project.basedir}/lib</directory>
+          <!-- 编译后的位置 -->
+          <targetPath>BOOT-INF/lib/</targetPath>
+          <includes>
+          <include>**/*.jar</include>
+          </includes>
+        </resource>
+        
+         <resource>
+			<directory>src/main/resources</directory>
+			<includes>
+			<include>**/*</include>
+			</includes>
+		</resource>
+	</resources>
+
+</build>
+ 
+</project>
